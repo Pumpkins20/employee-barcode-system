@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistem Barcode Karyawan - Generate dan Scan Barcode">
+    <title>Sistem Barcode Karyawan</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Sistem Barcode Karyawan</h1>
+        </header>
+        
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="generate">
+                Generate Barcode
+            </button>
+            <button class="tab-btn" data-tab="scan">
+                Scan Barcode
+            </button>
+        </nav>
+
+        <!-- Tab Generate Barcode -->
+        <section id="generate-tab" class="tab-content active">
+            <h2>Daftar Karyawan & Barcode</h2>
+            <div class="employee-grid" id="employee-list"></div>
+        </section>
+
+        <!-- Tab Scan Barcode -->
+        <section id="scan-tab" class="tab-content">
+            <div class="scanner-info">
+                <h2>Scan Barcode Karyawan</h2>
+                <p>Arahkan kamera ke barcode karyawan untuk melihat detail informasi</p>
+            </div>
+            <div id="reader"></div>
+            <div id="scan-result"></div>
+            <div id="employee-detail" class="employee-detail"></div>
+        </section>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/barcode-generator.js"></script>
+    <script src="assets/js/barcode-scanner.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

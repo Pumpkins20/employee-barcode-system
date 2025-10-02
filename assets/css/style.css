@@ -1,0 +1,340 @@
+/* ========================================
+   Reset & Base Styles
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ========================================
+   Container & Layout
+   ======================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ========================================
+   Tabs Navigation
+   ======================================== */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 15px;
+    background: rgba(255,255,255,0.2);
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+}
+
+.tab-btn:hover {
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background: white;
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ========================================
+   Tab Content
+   ======================================== */
+.tab-content {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s;
+}
+
+.tab-content h2 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* ========================================
+   Employee Grid & Cards
+   ======================================== */
+.employee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.employee-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.employee-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+.employee-card p {
+    color: #555;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.employee-card p strong {
+    color: #333;
+}
+
+/* ========================================
+   Barcode Container
+   ======================================== */
+.barcode-container {
+    margin: 15px 0;
+    text-align: center;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #e0e0e0;
+}
+
+.barcode-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn-download {
+    width: 100%;
+    padding: 12px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-download:hover {
+    background: #5568d3;
+    transform: scale(1.02);
+}
+
+.btn-download:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   Scanner Section
+   ======================================== */
+.scanner-info {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.scanner-info h2 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.scanner-info p {
+    font-size: 15px;
+    color: #666;
+}
+
+#reader {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 3px solid #667eea;
+}
+
+#scan-result {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f9ff;
+    border-radius: 5px;
+    display: none;
+}
+
+.error-msg {
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.success-msg {
+    color: #10b981;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* ========================================
+   Employee Detail Card
+   ======================================== */
+.employee-detail {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+    display: none;
+}
+
+.employee-detail.show {
+    display: block;
+    animation: slideIn 0.5s;
+}
+
+@keyframes slideIn {
+    from { 
+        opacity: 0; 
+        transform: scale(0.9); 
+    }
+    to { 
+        opacity: 1; 
+        transform: scale(1); 
+    }
+}
+
+.employee-detail h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: white;
+}
+
+.employee-detail .detail-item {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.employee-detail .detail-label {
+    font-weight: bold;
+    min-width: 150px;
+}
+
+/* ========================================
+   Status Badge
+   ======================================== */
+.status-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-active {
+    background: #10b981;
+    color: white;
+}
+
+.status-inactive {
+    background: #ef4444;
+    color: white;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .tab-content {
+        padding: 20px;
+    }
+    
+    .employee-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .employee-detail .detail-label {
+        min-width: 100px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 1.5em;
+    }
+    
+    .tab-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .tab-content h2 {
+        font-size: 1.4em;
+    }
+}
